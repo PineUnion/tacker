@@ -1,4 +1,4 @@
-template_name: sample-vnfd
+template_name: sample-vnfd-cms
 description: demo-example
 
 service_properties:
