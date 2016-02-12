@@ -9,12 +9,12 @@ from tacker.vm.monitor_drivers import abstract_driver
 
 LOG = logging.getlogger(__name__)
 OPTS = [
-    cfg.StrOpt('count', default='1',
-               help=_('number of ICMP packets to send')),
-    cfg.StrOpt('timeout', default='1',
-               help=_('number of seconds to wait for a response')),
-    cfg.StrOpt('interval', default='1',
-               help=_('number of seconds to wait between packets'))
+    # cfg.StrOpt('count', default='1',
+    #            help=_('number of ICMP packets to send')),
+    cfg.StrOpt('thres', default='20',
+               help=_('The threshold of hardware resource')),
+    # cfg.StrOpt('interval', default='1',
+    #            help=_('number of seconds to wait between packets'))
 ]
 cfg.CONF.register_opts(OPTS, 'monitor_cms')
 
