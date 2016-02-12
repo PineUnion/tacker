@@ -281,7 +281,21 @@ class DeviceHeat(abstract_driver.DeviceAbstractDriver):
                                                          'failure': 'respawn'
                                                      }}}
                     vdu_dict.pop('failure_policy')
+                 # my code is here
+                if monitoring_policy == 'cpu_overload' and failure_policy == 'respawn':
+                   vdu_dict['monitoring_policy'] = {'cpu_overload': {
+                                                         'actions': {
+                                                             'failure': 'respawn'
 
+                                                    }}}
+                    vdu_dict.pop('failure_policy')
+                if monitoring_policy == 'mem_overload' and failure_policy == 'respawn':
+                    vdu_dict=['monitoring_policy'] = { 'mem_overload': {
+                                                             'actions': {
+                                                                  'failure': 'respawn'
+                                                     }}}
+                    vdu_dict.pop('failure_policy')
+                #-------------------------------------------------
                 if monitoring_policy != 'noop':
                     monitoring_dict['vdus'][vdu_id] = \
                         vdu_dict['monitoring_policy']
