@@ -33,7 +33,7 @@ vdus:
           interval: .5
           timeout: 2
         actions:
-          failure: respawn
+          failure: overload
 
     config:
       param0: key0
