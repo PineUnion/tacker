@@ -326,14 +326,14 @@ class DeviceHeat(abstract_driver.DeviceAbstractDriver):
                     if failure_policy == 'overload':
                         vdu_dict['monitoring_policy'] = {'cms': {
                                                              'actions': {
-                                                                'failure': 'highload'
+                                                                'failure': 'overload'
 
                                                     }}}
                         vdu_dict.pop('failure_policy')
                         self._process_vdu_ceilometer_alarm_high(vdu_id, vdu_dict,
                                                                 properties,
                                                                 template_dict)
-                    elif failure_policy == 'overload':
+                    elif failure_policy == 'lowload':
                         vdu_dict['monitoring_policy'] = {'cms': {
                                                              'actions': {
                                                                 'failure': 'lowload'
