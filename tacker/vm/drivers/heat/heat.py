@@ -168,7 +168,7 @@ class DeviceHeat(abstract_driver.DeviceAbstractDriver):
                 'properties': {
                     'description': 'Scale-up',
                     'meter_name': 'cpu_util',
-                    'statistic': 'avg'
+                    'statistic': 'avg',
                     'period': 60,
                     'evaluation_periods': 1,
                     'threshold': 50,
@@ -180,7 +180,7 @@ class DeviceHeat(abstract_driver.DeviceAbstractDriver):
                 }
             }
     @log.log
-     def _process_vdu_ceilometer_alarm_low(self, vdu_id, vdu_dict, properties,
+    def _process_vdu_ceilometer_alarm_low(self, vdu_id, vdu_dict, properties,
                                         template_dict):
         def make_alarm_low():
             low_alarm_dict = {
@@ -188,7 +188,7 @@ class DeviceHeat(abstract_driver.DeviceAbstractDriver):
                 'properties': {
                     'description': 'Scale-down',
                     'meter_name': 'cpu_util',
-                    'statistic': 'avg'
+                    'statistic': 'avg',
                     'period': 600,
                     'evaluation_periods': 1,
                     'threshold': 15,
