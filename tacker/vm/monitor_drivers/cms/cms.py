@@ -33,11 +33,11 @@ class VNFMonitorCMS(abstract_driver.VNFMonitorAbstractDriver):
            LOG.debug(_('monitor_url %s'), device)
            return device.get('monitor_url', '')
 
-       def _is_cpu_overload(self, mgmt_cpu="", thres, **kwargs):
+       def _is_cpu_overload(self, mgmt_cpu="", thres=50, **kwargs):
            # using ceilometer API to get state
 
 
-       def _is_mem_overload(self, mgmt_mem="", thres, **kwargs):
+#       def _is_mem_overload(self, mgmt_mem="", thres, **kwargs):
            #using ceilometer API to get state
 
         @log.log
